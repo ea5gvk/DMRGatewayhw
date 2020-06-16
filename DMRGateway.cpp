@@ -1199,10 +1199,7 @@ int CDMRGateway::run()
 
 		if (xlxVoice != NULL)
 			xlxVoice->clock(ms);
-		
-                if (removeTA != NULL)
-			removeTA->clock(ms);
-		
+	
 		for (std::vector<CDynVoice*>::iterator it = m_dynVoices.begin(); it != m_dynVoices.end(); ++it)
 			(*it)->clock(ms);
 
