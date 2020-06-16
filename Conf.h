@@ -85,6 +85,7 @@ public:
 	unsigned int getRptPort() const;
 	std::string  getLocalAddress() const;
 	unsigned int getLocalPort() const;
+	bool         getRemoveTA() const;
 	bool         getRuleTrace() const;
 	bool         getDebug() const;
 
@@ -241,6 +242,7 @@ private:
 	unsigned int m_localPort;
 	unsigned int m_rfTimeout;
 	unsigned int m_netTimeout;
+	bool         m_removeTA;
 	bool         m_ruleTrace;
 	bool         m_debug;
 
