@@ -439,7 +439,7 @@ int CDMRGateway::run()
 
 	CRemoveTA* removeTA = NULL;
 	if (m_conf.getRemoveTA())
-		removeTA = new CRemoveTA;
+		removeTA = CRemoveTA;
 	
 	unsigned int rfTimeout  = m_conf.getRFTimeout();
 	unsigned int netTimeout = m_conf.getNetTimeout();
