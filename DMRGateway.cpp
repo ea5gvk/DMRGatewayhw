@@ -913,10 +913,10 @@ int CDMRGateway::run()
 				if (rewritten) {
 					// Check that the rewritten slot is free to use.
 					slotNo = data.getSlotNo();
-					if (m_status[slot1] == DMRGWS_NONE || m_status[slot2] == DMRGWS_DMRNETWORK1) {
+					if (m_status[slotNo] == DMRGWS_NONE || m_status[slotNo] == DMRGWS_DMRNETWORK1) {
 						for (std::vector<CRewriteDynTGRF*>::iterator it = m_dynRF.begin(); it != m_dynRF.end(); ++it)
 							(*it)->stopVoice(slotNo);
-						if (removeTA != NULL)
+						if (removeTA ![slotNo] == NULL || removeTA ![slotNo] == NULL)
 							removeTA->process(data);
 						m_repeater->write(data);
 						m_status[slotNo] = DMRGWS_DMRNETWORK1;
