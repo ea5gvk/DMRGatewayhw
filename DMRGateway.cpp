@@ -868,8 +868,6 @@ int CDMRGateway::run()
 				if (m_status[m_xlxSlot] == DMRGWS_NONE || m_status[m_xlxSlot] == DMRGWS_XLXREFLECTOR) {
 					bool ret = m_rptRewrite->process(data, false);
 					if (ret) {
-						if (removeTA != NULL)
-							removeTA->process(data);
 						m_repeater->write(data);
 						m_status[m_xlxSlot] = DMRGWS_XLXREFLECTOR;
 						timer[m_xlxSlot]->setTimeout(netTimeout);
@@ -968,8 +966,6 @@ int CDMRGateway::run()
 					// Check that the rewritten slot is free to use.
 					slotNo = data.getSlotNo();
 					if (m_status[slotNo] == DMRGWS_NONE || m_status[slotNo] == DMRGWS_DMRNETWORK2) {
-						if (removeTA != NULL)
-							removeTA->process(data);
 						for (std::vector<CRewriteDynTGRF*>::iterator it = m_dynRF.begin(); it != m_dynRF.end(); ++it)
 							(*it)->stopVoice(slotNo);
 						m_repeater->write(data);
@@ -1020,8 +1016,6 @@ int CDMRGateway::run()
 					// Check that the rewritten slot is free to use.
 					slotNo = data.getSlotNo();
 					if (m_status[slotNo] == DMRGWS_NONE || m_status[slotNo] == DMRGWS_DMRNETWORK3) {
-						if (removeTA != NULL)
-							removeTA->process(data);
 						for (std::vector<CRewriteDynTGRF*>::iterator it = m_dynRF.begin(); it != m_dynRF.end(); ++it)
 							(*it)->stopVoice(slotNo);
 						m_repeater->write(data);
@@ -1072,8 +1066,6 @@ int CDMRGateway::run()
 					// Check that the rewritten slot is free to use.
 					slotNo = data.getSlotNo();
 					if (m_status[slotNo] == DMRGWS_NONE || m_status[slotNo] == DMRGWS_DMRNETWORK4) {
-						if (removeTA != NULL)
-							removeTA->process(data);
 						for (std::vector<CRewriteDynTGRF*>::iterator it = m_dynRF.begin(); it != m_dynRF.end(); ++it)
 							(*it)->stopVoice(slotNo);
 						m_repeater->write(data);
