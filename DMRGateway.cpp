@@ -916,7 +916,7 @@ int CDMRGateway::run()
 					if (m_status[slotNo] == DMRGWS_NONE || m_status[slotNo] == DMRGWS_DMRNETWORK1) {
 						for (std::vector<CRewriteDynTGRF*>::iterator it = m_dynRF.begin(); it != m_dynRF.end(); ++it)
 							(*it)->stopVoice(slotNo);
-						if (removeTA ![slotNo] == NULL || removeTA ![slotNo] == NULL)
+						if (removeTA != NULL [slotNo] || removeTA != NULL [slotNo])
 							removeTA->process(data);
 						m_repeater->write(data);
 						m_status[slotNo] = DMRGWS_DMRNETWORK1;
