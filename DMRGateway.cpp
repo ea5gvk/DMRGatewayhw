@@ -917,7 +917,7 @@ int CDMRGateway::run()
 						for (std::vector<CRewriteDynTGRF*>::iterator it = m_dynRF.begin(); it != m_dynRF.end(); ++it)
 							(*it)->stopVoice(slotNo);
 						if (removeTA != NULL)
-							removeTA->process(data, slotNo);
+							removeTA->process(data);
 						m_repeater->write(data);
 						m_status[slotNo] = DMRGWS_DMRNETWORK1;
 						timer[slotNo]->setTimeout(netTimeout);
